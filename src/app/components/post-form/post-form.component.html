@@ -1,0 +1,26 @@
+<h2> Add client </h2>
+<div class="card card-body mb-3">
+   <form>
+      <div class="form-group mb-3">
+         <label>name</label>
+         <input type="text" class="form-control" [(ngModel)]="currentPost.name" name="name" #name>
+
+      </div>
+      <div class="form-group mb-3">
+         <label>id</label>
+         <input type="text" class="form-control" [(ngModel)]="currentPost.id" name="id" #id>
+
+      </div>
+
+      <div class="form-group mb-3">
+         <label>Email</label>
+         <input type="text" class="form-control" [(ngModel)]="currentPost.email" name="email" #email>
+      </div>
+      <input type="hidden" [(ngModel)]="currentPost.id" name="id">
+
+
+      <button *ngIf="!isEdit" (click)="addPost(name.value , email.value)" class="btn btn-dark btn-block mb-3"> Add new
+         client </button>
+      <button *ngIf="isEdit" (click)="updatePost()" class="btn btn-warning btn-block mb-3"> Update </button>
+   </form>
+</div>
